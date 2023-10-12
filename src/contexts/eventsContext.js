@@ -2,7 +2,7 @@ import { createContext, useContext, useReducer } from "react";
 import { eventsReducer } from "../reducers/eventsReducer";
 import { initialState } from "./initialState";
 
-const EventsContext = createContext();
+export const EventsContext = createContext();
 
 export const useEventsContext = () => {
   return useContext(EventsContext);

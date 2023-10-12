@@ -1,11 +1,11 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
-import { useEventsContext } from "../../contexts/eventsContext";
+import axios from "axios";
+import { useEventsContext } from "../../contexts/EventsContext";
 import { actions } from "../../reducers/Actions";
 import { MOCK_EVENT_URL } from "./constants";
 import { transformResponseData } from "./utils";
 
-const useFetchEvents = () => {
+export const useFetchEvents = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const { dispatch } = useEventsContext();
@@ -33,5 +33,3 @@ const useFetchEvents = () => {
 
   return { isLoading, isError, refetch: fetchAllEvents };
 };
-
-export default useFetchEvents;

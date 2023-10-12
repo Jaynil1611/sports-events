@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import { toast } from "react-toastify";
-import { useEventsContext } from "../../contexts/eventsContext";
+import { useEventsContext } from "../../contexts/EventsContext";
 import { EventCard } from "../components/EventCard/EventCard";
 import { actions } from "../../reducers/Actions";
 import { Button } from "../components/Button/Button";
@@ -11,10 +11,10 @@ import { EventList, EventListTitle, EventListWrapper } from "./styles";
 export const AllEvents = () => {
   const { events, selectedEvents, dispatch } = useEventsContext();
 
-  // const sortedEvents = useMemo(
-  //   () => events.sort((e1, e2) => e1.start_time - e2.start_time),
-  //   [events.length]
-  // );
+  const sortedEvents = useMemo(
+    () => events.sort((e1, e2) => e1.start_time - e2.start_time),
+    [events.length]
+  );
 
   const handleEventClick = (e) => {
     const { eventId, action } = e.target.dataset;
@@ -31,7 +31,7 @@ export const AllEvents = () => {
     <EventListWrapper>
       <EventListTitle>All Events</EventListTitle>
       <EventList onClick={handleEventClick}>
-        {events.map((event) => {
+        {sortedEvents.map((event) => {
           const isDisabled = isEventDisabled(selectedEvents, event);
           return (
             <EventCard key={event.id} {...event} isDisabled={isDisabled}>

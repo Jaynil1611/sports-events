@@ -1,5 +1,5 @@
 import React from "react";
-import useFetchEvents from "./useFetchEvents";
+import { useFetchEvents } from "./UseFetchEvents";
 import { AllEvents } from "./AllEvents";
 import { SelectedEvents } from "./SelectedEvents";
 import { EventListContainer } from "./styles";

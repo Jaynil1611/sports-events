@@ -1,5 +1,6 @@
 import { ToastContainer } from "react-toastify";
 import { EventList } from "./views/EventList/EventList";
+
 import "react-toastify/dist/ReactToastify.min.css";
 
 function App() {
