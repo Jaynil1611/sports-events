@@ -4,6 +4,7 @@ import { useEventsContext } from "../../contexts/eventsContext";
 import { actions } from "../../reducers/Actions";
 import { MOCK_EVENT_URL } from "./constants";
 import { transformResponseData } from "./utils";
+import { toast } from "react-toastify";
 
 export const useFetchEvents = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -22,6 +23,7 @@ export const useFetchEvents = () => {
       });
     } catch (e) {
       setIsError(true);
+      toast.error("Failed to fetch events, please try again later");
     } finally {
       setIsLoading(false);
     }
