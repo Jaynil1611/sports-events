@@ -4,12 +4,6 @@ import { EventsContext } from "../../../contexts/EventsContext";
 import { EventList } from "../EventList";
 import userEvent from "@testing-library/user-event";
 
-// const server = setupServer(...apiHandlers);
-
-// beforeAll(() => server.listen());
-// afterEach(() => server.resetHandlers());
-// afterAll(() => server.close());
-
 const state = { events: mockEvents, selectedEvents: [] };
 const dispatch = jest.fn();
 
