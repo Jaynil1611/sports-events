@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import { toast } from "react-toastify";
-import { useEventsContext } from "../../contexts/EventsContext";
+import { useEventsContext } from "../../contexts/eventsContext";
 import { EventCard } from "../components/EventCard/EventCard";
 import { actions } from "../../reducers/Actions";
 import { Button } from "../components/Button/Button";

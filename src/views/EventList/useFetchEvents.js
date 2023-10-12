@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { useEventsContext } from "../../contexts/EventsContext";
+import { useEventsContext } from "../../contexts/eventsContext";
 import { actions } from "../../reducers/Actions";
 import { MOCK_EVENT_URL } from "./constants";
 import { transformResponseData } from "./utils";

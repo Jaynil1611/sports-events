@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { mockEvents } from "../../../mocks/mockData";
-import { EventsContext } from "../../../contexts/EventsContext";
+import { EventsContext } from "../../../contexts/eventsContext";
 import { EventList } from "../EventList";
 import userEvent from "@testing-library/user-event";
 

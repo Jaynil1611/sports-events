@@ -1,6 +1,6 @@
 import React from "react";
 import { EventList, EventListTitle, EventListWrapper } from "./styles";
-import { useEventsContext } from "../../contexts/EventsContext";
+import { useEventsContext } from "../../contexts/eventsContext";
 import { eventActionMap } from "./constants";
 import { actions } from "../../reducers/Actions";
 import { EventCard } from "../components/EventCard/EventCard";
