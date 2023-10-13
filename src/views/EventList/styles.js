@@ -40,7 +40,7 @@ export const EventListWrapper = styled.div`
   width: 100%;
 
   @media screen and (max-width: 1024px) {
-    padding: 0rem;
+    padding: 1.5rem 0rem;
   }
 `;
 
