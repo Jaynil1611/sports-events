@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useMemo, useReducer } from "react";
 import { eventsReducer } from "../reducers/eventsReducer";
 import { initialState } from "./initialState";
 
@@ -11,8 +11,10 @@ export const useEventsContext = () => {
 export const EventsProvider = ({ children }) => {
   const [state, dispatch] = useReducer(eventsReducer, initialState);
 
+  const { state: memoizedState } = useMemo(() => ({ state }), [state]);
+
   return (
-    <EventsContext.Provider value={{ ...state, dispatch }}>
+    <EventsContext.Provider value={{ ...memoizedState, dispatch }}>
       {children}
     </EventsContext.Provider>
   );

@@ -5,11 +5,11 @@ import { SelectedEvents } from "./SelectedEvents";
 import { EventListContainer } from "./styles";
 
 export const EventList = () => {
-  useFetchEvents();
+  const { isLoading } = useFetchEvents();
 
   return (
     <EventListContainer>
-      <AllEvents />
+      <AllEvents isEventLoading={isLoading} />
       <SelectedEvents />
     </EventListContainer>
   );
