@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const EventListContainer = styled.section`
   display: flex;
@@ -34,15 +34,18 @@ export const EventListTitle = styled.h2`
   margin-bottom: 1rem;
 `;
 
-export const EventListWrapper = styled.div`
-  border: 1px solid lightgray;
-  padding: 1.5rem;
-  width: 100%;
+export const EventListWrapper = styled.div(
+  ({ isFullHeight = false }) => css`
+    border: 1px solid lightgray;
+    padding: 1.5rem;
+    width: 100%;
+    min-height: ${isFullHeight ? "100vh" : "0"};
 
-  @media screen and (max-width: 1024px) {
-    padding: 1.5rem 0rem;
-  }
-`;
+    @media screen and (max-width: 1024px) {
+      padding: 1.5rem 0rem;
+    }
+  `
+);
 
 export const SpinnerAlignment = styled.div`
   margin-top: 3rem;

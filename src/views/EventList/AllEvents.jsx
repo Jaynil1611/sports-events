@@ -29,7 +29,7 @@ export const AllEvents = ({ isEventLoading }) => {
   };
 
   return (
-    <EventListWrapper>
+    <EventListWrapper isFullHeight>
       <EventListTitle>All Events</EventListTitle>
       {isEventLoading ? (
         <SpinnerAlignment>
