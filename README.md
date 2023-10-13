@@ -11,6 +11,11 @@
 View the live demo of the application here 👉 [Sports Events](https://sports-events.vercel.app/).
 
 
+## Presentation Deck
+View the presentation behind the implementation of this project.
+[Presentation](https://docs.google.com/presentation/d/1gProMTa2XA9xeHHfGJ2NBwqxgWZySGs9zYTTkFjc5M0/edit)
+
+
 ## Technologies Used
 - React JS
 - Styled Components

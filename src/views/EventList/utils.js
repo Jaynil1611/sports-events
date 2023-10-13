@@ -17,3 +17,31 @@ export const isEventDisabled = (selectedEvents, currentEvent) => {
     }
   }
 };
+
+export const getSearchedEvents = (eventList, query) => {
+  if (query) {
+    return eventList.filter((event) =>
+      event.event_name.toLowerCase().startsWith(query.toLowerCase())
+    );
+  }
+  return eventList;
+};
+
+export const getEventCategories = (eventList) => {
+  const categoryMap = eventList.reduce((result, { event_category }) => {
+    if (!result[event_category]) {
+      result[event_category] = 1;
+    }
+    return result;
+  }, {});
+  return Object.keys(categoryMap);
+};
+
+export const getFilteredCategoryEvents = (eventList, query) => {
+  if (query) {
+    return eventList.filter((event) =>
+      event.event_category.toLowerCase().includes(query.toLowerCase())
+    );
+  }
+  return eventList;
+};
