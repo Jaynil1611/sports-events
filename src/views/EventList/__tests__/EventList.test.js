@@ -1,8 +1,17 @@
+import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+import { setupServer } from "msw/node";
 import { mockEvents } from "../../../mocks/mockData";
+import { apiHandlers } from "../../../mocks/handlers";
 import { EventsContext } from "../../../contexts/eventsContext";
 import { EventList } from "../EventList";
-import userEvent from "@testing-library/user-event";
+
+const server = setupServer(...apiHandlers);
+
+beforeAll(() => server.listen());
+afterEach(() => server.resetHandlers());
+afterAll(() => server.close());
 
 const state = { events: mockEvents, selectedEvents: [] };
 const dispatch = jest.fn();
@@ -27,7 +36,7 @@ describe("Event List", () => {
       screen.getByRole("heading", { name: /selected events/i })
     ).toBeInTheDocument();
 
-    expect(screen.getByText(/butterfly/i)).toBeInTheDocument();
+    expect(await screen.findByText(/butterfly/i)).toBeInTheDocument();
 
     expect(screen.getByRole("button", { name: /select/i })).toBeInTheDocument();
   });
@@ -35,7 +44,7 @@ describe("Event List", () => {
   test("should allow user to select any event from available events", async () => {
     renderApp();
 
-    userEvent.click(screen.getByRole("button", { name: /select/i }));
+    userEvent.click(await screen.findByRole("button", { name: /select/i }));
 
     expect(dispatch).toHaveBeenNthCalledWith(1, {
       payload: 1,
