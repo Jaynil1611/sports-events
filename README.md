@@ -24,6 +24,12 @@ View the live demo of the application here 👉 [Sports Events](https://sports-e
 - [Mobile Performance Report](https://pagespeed.web.dev/analysis/https-sports-events-vercel-app/ot9lw2x93b?form_factor=mobile)
 
 
+## Performance Improvements
+- Used `useMemo` hook to avoid re-renders & cache state value.
+- Made the website responsive to maintain consitent performance for mobile & tablet users.
+- Fixed layout shift issues & accessibility issues recommended by page speed insights report.
+- Using vercel to deploy this application which uses it's edge network to cache requests & improve initial load time.
+
 ## Run Application
 - Clone the repository
 - Run npm install to install required dependencies
